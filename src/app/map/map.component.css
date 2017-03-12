@@ -1,0 +1,9 @@
+.container {
+	display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.sebm-google-map-container {
+	height: 400px;
+}
