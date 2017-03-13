@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseAppConfig, FirebaseAuthConfig } from './firebaseconfig';
 
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
@@ -18,6 +20,7 @@ import { MapComponent } from './map/map.component';
     FormsModule,
     HttpModule,
     CommonModule,
+    AngularFireModule.initializeApp(FirebaseAppConfig, FirebaseAuthConfig, 'Things Tracker Web'),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD0SOldTAJ-hat4NThIP2HayQh52i6JDaU'
     })
@@ -26,3 +29,5 @@ import { MapComponent } from './map/map.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// https://github.com/angular/angularfire2/tree/master/docs

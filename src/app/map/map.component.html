@@ -4,11 +4,12 @@ https://angular-maps.com/
 <h3 style="margin: 20px 0 0 0; padding: 0 0 0 0;">
 	3 <small>{{ title }}</small>
 </h3>
-<h1 style="margin: 0 0 10px 0; padding: 0 0 0 0;" class="page-header"> {{ subtitle }} </h1>
+<h1 style="margin: 0 0 10px 0; padding: 0 0 0 0;" class="page-header"> {{ subtitle }} {{ (infoLocation | async)?.name }} - [{{ (infoLocation | async)?.cords.lat }}, {{ (infoLocation | async)?.cords.lng }}] </h1>
+
 <div class="container">
-	<sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+	<sebm-google-map [latitude]="(infoLocation | async)?.cords.lat" [longitude]="(infoLocation | async)?.cords.lng" [zoom]="zoom">
 	  <sebm-google-map-marker 
-	      *ngFor="let m of markers" [latitude]="m.lat" [longitude]="m.lng" [label]="m.label">
+	      *ngFor="let m of devices | async" [latitude]="m.cords.lat" [longitude]="m.cords.lng" [label]="m.cords.label">
 
 	    <sebm-google-map-info-window>
 	        <p>More info!</p>
