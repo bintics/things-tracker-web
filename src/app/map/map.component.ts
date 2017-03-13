@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
-	public title: string = 'Things Tracker';
-	public subtitle: string = 'Map of Things';
+	public title: string = 'Dispositivos conectados a la red';
+	public subtitle: string = 'Rastreo de dispositivos';
 	public zoom: number = 14;
 	public lat: number = 19.434000;
 	public lng: number = -99.145000;
